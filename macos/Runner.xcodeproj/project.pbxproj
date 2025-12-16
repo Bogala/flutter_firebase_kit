@@ -514,13 +514,21 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.14;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = pro.listo.flutter_starter_kit.integration;
+				PRODUCT_BUNDLE_IDENTIFIER = fr.benoitfontaine.starter.integration;
 				SDKROOT = macosx;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 			};
 			name = "Debug-integration";
+		};
+		107C63B19623BA202F487335 /* Release-prod */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = AA55FD046322E0DCE07F01DD /* prodRelease.xcconfig */;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = "Release-prod";
 		};
 		12D67CB54391CCC44CCD6D25 /* Release-test */ = {
 			isa = XCBuildConfiguration;
@@ -579,11 +587,19 @@
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.14;
 				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_BUNDLE_IDENTIFIER = pro.listo.flutter_starter_kit.test;
+				PRODUCT_BUNDLE_IDENTIFIER = fr.benoitfontaine.starter.test;
 				SDKROOT = macosx;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				SWIFT_VERSION = 5.0;
+			};
+			name = "Release-test";
+		};
+		188279E22817F90E3A87A963 /* Release-test */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 80653814337EAA21BDF7FF8E /* testRelease.xcconfig */;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = "Release-test";
 		};
@@ -686,7 +702,7 @@
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.14;
 				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_BUNDLE_IDENTIFIER = pro.listo.flutter_starter_kit.recette;
+				PRODUCT_BUNDLE_IDENTIFIER = fr.benoitfontaine.starter.recette;
 				SDKROOT = macosx;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
@@ -987,7 +1003,7 @@
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.14;
 				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_BUNDLE_IDENTIFIER = pro.listo.flutter_starter_kit.dev;
+				PRODUCT_BUNDLE_IDENTIFIER = fr.benoitfontaine.starter.dev;
 				SDKROOT = macosx;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
@@ -1052,7 +1068,7 @@
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.14;
 				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_BUNDLE_IDENTIFIER = pro.listo.flutter_starter_kit.preprod;
+				PRODUCT_BUNDLE_IDENTIFIER = fr.benoitfontaine.starter.preprod;
 				SDKROOT = macosx;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
@@ -1124,7 +1140,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.14;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = pro.listo.flutter_starter_kit.dev;
+				PRODUCT_BUNDLE_IDENTIFIER = fr.benoitfontaine.starter.dev;
 				SDKROOT = macosx;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -1196,13 +1212,29 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.14;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = pro.listo.flutter_starter_kit.preprod;
+				PRODUCT_BUNDLE_IDENTIFIER = fr.benoitfontaine.starter.preprod;
 				SDKROOT = macosx;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 			};
 			name = "Debug-preprod";
+		};
+		50EB69753D0EB1BF8A57D45C /* Profile-prod */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 01075B30598754C9EBDB06F1 /* prodProfile.xcconfig */;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = "Profile-prod";
+		};
+		52DB4F71BF1945BAEC431D6F /* Release-preprod */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8C015EF81D665505AF095286 /* preprodRelease.xcconfig */;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = "Release-preprod";
 		};
 		580894FAB13FCB5F4C7EDA22 /* Debug-test */ = {
 			isa = XCBuildConfiguration;
@@ -1268,13 +1300,21 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.14;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = pro.listo.flutter_starter_kit.test;
+				PRODUCT_BUNDLE_IDENTIFIER = fr.benoitfontaine.starter.test;
 				SDKROOT = macosx;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 			};
 			name = "Debug-test";
+		};
+		5C178EB34DECE3A9047EE57F /* Debug-prod */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 68D711FD41370D2CCF908161 /* prodDebug.xcconfig */;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = "Debug-prod";
 		};
 		656E3B7202DA4D57DC912446 /* Profile-recette */ = {
 			isa = XCBuildConfiguration;
@@ -1333,7 +1373,7 @@
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.14;
 				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_BUNDLE_IDENTIFIER = pro.listo.flutter_starter_kit.recette;
+				PRODUCT_BUNDLE_IDENTIFIER = fr.benoitfontaine.starter.recette;
 				SDKROOT = macosx;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
@@ -1398,13 +1438,21 @@
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.14;
 				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_BUNDLE_IDENTIFIER = pro.listo.flutter_starter_kit;
+				PRODUCT_BUNDLE_IDENTIFIER = fr.benoitfontaine.starter;
 				SDKROOT = macosx;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				SWIFT_VERSION = 5.0;
 			};
 			name = "Profile-prod";
+		};
+		81EEE4FA16D886B47973F3C1 /* Profile-integration */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = AD0771E170BAD9CC67979CAB /* integrationProfile.xcconfig */;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = "Profile-integration";
 		};
 		849C82945C600E9ECE3DA7C2 /* Release-integration */ = {
 			isa = XCBuildConfiguration;
@@ -1463,7 +1511,7 @@
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.14;
 				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_BUNDLE_IDENTIFIER = pro.listo.flutter_starter_kit.integration;
+				PRODUCT_BUNDLE_IDENTIFIER = fr.benoitfontaine.starter.integration;
 				SDKROOT = macosx;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
@@ -1528,13 +1576,21 @@
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.14;
 				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_BUNDLE_IDENTIFIER = pro.listo.flutter_starter_kit.integration;
+				PRODUCT_BUNDLE_IDENTIFIER = fr.benoitfontaine.starter.integration;
 				SDKROOT = macosx;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				SWIFT_VERSION = 5.0;
 			};
 			name = "Profile-integration";
+		};
+		9BE759181EE9F404916EFCD8 /* Debug-test */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 21AA6EF95339E88977E3358F /* testDebug.xcconfig */;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = "Debug-test";
 		};
 		A3FE90BBC3A65F1573538CC9 /* Release-prod */ = {
 			isa = XCBuildConfiguration;
@@ -1593,13 +1649,45 @@
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.14;
 				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_BUNDLE_IDENTIFIER = pro.listo.flutter_starter_kit;
+				PRODUCT_BUNDLE_IDENTIFIER = fr.benoitfontaine.starter;
 				SDKROOT = macosx;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				SWIFT_VERSION = 5.0;
 			};
 			name = "Release-prod";
+		};
+		A76E939573FE58FDB1BAFEC5 /* Debug-dev */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0CD8A358BF59C4930FC4441A /* devDebug.xcconfig */;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = "Debug-dev";
+		};
+		A7F4F2DE87AA4F07E120F7EB /* Debug-recette */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6CD8BD3D929278757959F3AB /* recetteDebug.xcconfig */;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = "Debug-recette";
+		};
+		B7E4B22EEA4A889AA03AAEB3 /* Profile-recette */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 69CCFA0AB5F8FE01769885E8 /* recetteProfile.xcconfig */;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = "Profile-recette";
+		};
+		BB8F46673DD7E5E9F6A2618E /* Release-integration */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 00AB8E71C584CA085B42D987 /* integrationRelease.xcconfig */;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = "Release-integration";
 		};
 		C53F34C717F51145B7CB4FA0 /* Debug-recette */ = {
 			isa = XCBuildConfiguration;
@@ -1665,13 +1753,37 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.14;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = pro.listo.flutter_starter_kit.recette;
+				PRODUCT_BUNDLE_IDENTIFIER = fr.benoitfontaine.starter.recette;
 				SDKROOT = macosx;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 			};
 			name = "Debug-recette";
+		};
+		D007E7551A4862BABF9BDAF7 /* Debug-integration */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7AFFF6E8834A938AE74D6E32 /* integrationDebug.xcconfig */;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = "Debug-integration";
+		};
+		D4AAF19980716D9E3571584D /* Release-recette */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = BE373AECD8821209F9B58D6E /* recetteRelease.xcconfig */;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = "Release-recette";
+		};
+		D6CDA31668E37D8B5B702923 /* Profile-dev */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B1211E7A6801AA541E10950C /* devProfile.xcconfig */;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = "Profile-dev";
 		};
 		E308FE4FE8C48E25ECD5DF21 /* Release-dev */ = {
 			isa = XCBuildConfiguration;
@@ -1730,13 +1842,21 @@
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.14;
 				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_BUNDLE_IDENTIFIER = pro.listo.flutter_starter_kit.dev;
+				PRODUCT_BUNDLE_IDENTIFIER = fr.benoitfontaine.starter.dev;
 				SDKROOT = macosx;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				SWIFT_VERSION = 5.0;
 			};
 			name = "Release-dev";
+		};
+		E475377CF4037B6621E430E7 /* Debug-preprod */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FFEDE441C41BAF5E67C68C4E /* preprodDebug.xcconfig */;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = "Debug-preprod";
 		};
 		EB8BF1DD1CE9901F4621BFFA /* Profile-test */ = {
 			isa = XCBuildConfiguration;
@@ -1795,13 +1915,21 @@
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.14;
 				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_BUNDLE_IDENTIFIER = pro.listo.flutter_starter_kit.test;
+				PRODUCT_BUNDLE_IDENTIFIER = fr.benoitfontaine.starter.test;
 				SDKROOT = macosx;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				SWIFT_VERSION = 5.0;
 			};
 			name = "Profile-test";
+		};
+		EFA4454C90738A99B14B8AB1 /* Release-dev */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = EC71552C44ABDBABB62DCFA7 /* devRelease.xcconfig */;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = "Release-dev";
 		};
 		F14A2843EF7A8ABDB601DF73 /* Debug-prod */ = {
 			isa = XCBuildConfiguration;
@@ -1867,7 +1995,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.14;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = pro.listo.flutter_starter_kit;
+				PRODUCT_BUNDLE_IDENTIFIER = fr.benoitfontaine.starter;
 				SDKROOT = macosx;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -1932,13 +2060,29 @@
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.14;
 				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_BUNDLE_IDENTIFIER = pro.listo.flutter_starter_kit.preprod;
+				PRODUCT_BUNDLE_IDENTIFIER = fr.benoitfontaine.starter.preprod;
 				SDKROOT = macosx;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				SWIFT_VERSION = 5.0;
 			};
 			name = "Release-preprod";
+		};
+		F4F09885235B585FC8859587 /* Profile-preprod */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C3D5C87248F720665F6F5E95 /* preprodProfile.xcconfig */;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = "Profile-preprod";
+		};
+		FBDF5B2B1654AFE7629ECA88 /* Profile-test */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3966216FD083E6C2061CBBD2 /* testProfile.xcconfig */;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = "Profile-test";
 		};
 /* End XCBuildConfiguration section */
 
@@ -1987,6 +2131,24 @@
 				33CC10FC2044A3C60003C045 /* Debug */,
 				33CC10FD2044A3C60003C045 /* Release */,
 				338D0CEA231458BD00FA5F75 /* Profile */,
+				5C178EB34DECE3A9047EE57F /* Debug-prod */,
+				50EB69753D0EB1BF8A57D45C /* Profile-prod */,
+				107C63B19623BA202F487335 /* Release-prod */,
+				E475377CF4037B6621E430E7 /* Debug-preprod */,
+				F4F09885235B585FC8859587 /* Profile-preprod */,
+				52DB4F71BF1945BAEC431D6F /* Release-preprod */,
+				A7F4F2DE87AA4F07E120F7EB /* Debug-recette */,
+				B7E4B22EEA4A889AA03AAEB3 /* Profile-recette */,
+				D4AAF19980716D9E3571584D /* Release-recette */,
+				D007E7551A4862BABF9BDAF7 /* Debug-integration */,
+				81EEE4FA16D886B47973F3C1 /* Profile-integration */,
+				BB8F46673DD7E5E9F6A2618E /* Release-integration */,
+				A76E939573FE58FDB1BAFEC5 /* Debug-dev */,
+				D6CDA31668E37D8B5B702923 /* Profile-dev */,
+				EFA4454C90738A99B14B8AB1 /* Release-dev */,
+				9BE759181EE9F404916EFCD8 /* Debug-test */,
+				FBDF5B2B1654AFE7629ECA88 /* Profile-test */,
+				188279E22817F90E3A87A963 /* Release-test */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

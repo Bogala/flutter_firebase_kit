@@ -1,0 +1,36 @@
+android {
+    flavorDimensions += "flavor-type"
+
+    productFlavors {
+        prod {
+            dimension "flavor-type"
+            applicationId "fr.benoitfontaine.starter"
+            resValue "string", "app_name", "Production"
+        }
+        preprod {
+            dimension "flavor-type"
+            applicationId "fr.benoitfontaine.starter.preprod"
+            resValue "string", "app_name", "Preprod"
+        }
+        recette {
+            dimension "flavor-type"
+            applicationId "fr.benoitfontaine.starter.recette"
+            resValue "string", "app_name", "Recette"
+        }
+        integration {
+            dimension "flavor-type"
+            applicationId "fr.benoitfontaine.starter.integration"
+            resValue "string", "app_name", "Integration"
+        }
+        dev {
+            dimension "flavor-type"
+            applicationId "fr.benoitfontaine.starter.dev"
+            resValue "string", "app_name", "Dev"
+        }
+        test {
+            dimension "flavor-type"
+            applicationId "fr.benoitfontaine.starter.test"
+            resValue "string", "app_name", "Test"
+        }
+    }
+}
