@@ -12,33 +12,33 @@ dependencies:
     sdk: flutter
   cupertino_icons: ^1.0.8
   http: ^1.6.0
-  get_it: ^9.2.0
-  injectable: ^2.7.1+2
+  get_it: ^9.2.1
+  injectable: ^2.7.1+4
   flutter_bloc: ^9.1.1
-  dio: ^5.9.0
-  retrofit: ^4.9.1
-  json_annotation: ^4.9.0
+  dio: ^5.9.2
+  retrofit: ^4.9.2
+  json_annotation: ^4.11.0
   flavor: ^2.0.0
   intl: ^0.20.2
   dio_mocked_responses: ^1.6.5+1
-  flutter_svg: ^2.2.3
-  characters: ^1.4.0
+  flutter_svg: ^2.2.4
+  characters: ^1.4.1
   dio_cache_interceptor: ^4.0.5
   hive: ^2.2.3
   freezed_annotation: ^3.1.0
   transparent_image: ^2.0.1
-  go_router: ^17.0.1
+  go_router: ^17.1.0
 dev_dependencies:
   flutter_test:
     sdk: flutter
   flutter_lints: ^6.0.0
-  build_runner: ^2.10.4
-  injectable_generator: ^2.9.1
-  retrofit_generator: ^10.2.0
-  json_serializable: ^6.11.2
-  flutter_flavorizr: ^2.4.1
+  build_runner: ^2.12.2
+  injectable_generator: ^2.12.1
+  retrofit_generator: ^10.2.3
+  json_serializable: ^6.13.0
+  flutter_flavorizr: ^2.4.2
   bdd_widget_test: ^2.1.3
-  freezed: ^3.2.3
+  freezed: ^3.2.5
   http_mock_adapter: ^0.6.1
 
 flutter:

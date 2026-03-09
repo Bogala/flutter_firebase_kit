@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// dart format width=80
 
 // **************************************************************************
 // InjectableConfigGenerator
@@ -31,16 +32,12 @@ const String _recette = 'recette';
 const String _preprod = 'preprod';
 
 extension GetItInjectableX on _i174.GetIt {
-// initializes the registration of main-scope dependencies inside of GetIt
+  // initializes the registration of main-scope dependencies inside of GetIt
   _i174.GetIt init({
     String? environment,
     _i526.EnvironmentFilter? environmentFilter,
   }) {
-    final gh = _i526.GetItHelper(
-      this,
-      environment,
-      environmentFilter,
-    );
+    final gh = _i526.GetItHelper(this, environment, environmentFilter);
     gh.singleton<_i459.Configuration>(
       () => _i404.ConfigurationDev(),
       registerFor: {_dev},
@@ -75,13 +72,7 @@ extension GetItInjectableX on _i174.GetIt {
     );
     gh.singleton<_i268.ApiModule>(
       () => _i1022.ApiModuleImpl(gh<_i268.Configuration>()),
-      registerFor: {
-        _dev,
-        _integration,
-        _recette,
-        _preprod,
-        _prod,
-      },
+      registerFor: {_dev, _integration, _recette, _preprod, _prod},
     );
     return this;
   }
