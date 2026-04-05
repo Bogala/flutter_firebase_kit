@@ -125,3 +125,10 @@ Types: `build`, `ci`, `docs`, `feat`, `fix`, `perf`, `refactor`, `test`
 Scopes: `core`, `data`, `domain`, `ui`, `design`
 
 Example: `LIS-123 - feat(ui) : ajouter écran de connexion`
+
+## Active Technologies
+- Dart 3.10+ / Flutter >=3.10.2 + `firebase_core`, `firebase_auth`, (001-firebase-auth)
+- Firebase Auth (remote) — no local storage needed (001-firebase-auth)
+
+## Recent Changes
+- 001-firebase-auth: Added Dart 3.10+ / Flutter >=3.10.2 + `firebase_core`, `firebase_auth`,

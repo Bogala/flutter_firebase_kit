@@ -1,13 +1,20 @@
 // coverage:ignore-file
 
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:injectable/injectable.dart';
+
+import '../core/core_module.dart';
+import 'go_router_refresh_stream.dart';
+import 'home/home_page.dart';
 
 @singleton
 class AppRouter {
   GoRouter? _goRouter;
   late final ValueNotifier<RoutingConfig> _routingConfiguration;
+  late final GoRouterRefreshStream _refreshStream;
+  final FirebaseAuth _firebaseAuth;
   final String _fragment = Uri.base.fragment;
   Map<String, String> _params =
       Map.fromEntries(Uri.base.queryParameters.entries);
@@ -19,18 +26,20 @@ class AppRouter {
     _params = params;
   }
 
-  AppRouter() {
+  AppRouter(AuthModule authModule) : _firebaseAuth = authModule.firebaseAuth {
+    _refreshStream = GoRouterRefreshStream(_firebaseAuth.authStateChanges());
     _routingConfiguration = ValueNotifier<RoutingConfig>(
       RoutingConfig(
+        redirect: _redirect,
         routes: <RouteBase>[
           ShellRoute(
             builder: (context, state, child) {
-              return child; // Ajouter ici le socle commun de toute votre application
+              return child;
             },
             routes: [
               transitionGoRoute(
                 path: '/',
-                builder: (context, state) => Center(child: const Text("En construction")), // Route racine, les autres seront ajoutées par injection de dépendance
+                builder: (context, state) => const HomePage(),
               )
             ],
           )
@@ -41,16 +50,33 @@ class AppRouter {
     Uri.base.removeFragment();
   }
 
+  String? _redirect(BuildContext context, GoRouterState state) {
+    final isAuthenticated = _firebaseAuth.currentUser != null;
+    final isOnLogin = state.matchedLocation.startsWith('/login');
+
+    if (!isAuthenticated && !isOnLogin) {
+      return '/login';
+    }
+    if (isAuthenticated && isOnLogin) {
+      return '/';
+    }
+    return null;
+  }
+
   GoRouter initWithRoute(String route) {
     _goRouter = GoRouter.routingConfig(
       routingConfig: _routingConfiguration,
       initialLocation: route,
+      refreshListenable: _refreshStream,
     );
     return _goRouter!;
   }
 
   GoRouter get goRouter {
-    _goRouter ??= GoRouter.routingConfig(routingConfig: _routingConfiguration);
+    _goRouter ??= GoRouter.routingConfig(
+      routingConfig: _routingConfiguration,
+      refreshListenable: _refreshStream,
+    );
     return _goRouter!;
   }
 
@@ -82,6 +108,7 @@ class AppRouter {
   void dispose() {
     goRouter.dispose();
     _routingConfiguration.dispose();
+    _refreshStream.dispose();
   }
 }
 

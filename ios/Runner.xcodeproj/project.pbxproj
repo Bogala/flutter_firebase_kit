@@ -30,6 +30,7 @@
 		97C146FE1CF9000F007C117D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 97C146FD1CF9000F007C117D /* Assets.xcassets */; };
 		97C147011CF9000F007C117D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 97C146FF1CF9000F007C117D /* LaunchScreen.storyboard */; };
 		9F4B3BDAD9E7CEB46CD945C7 /* devRelease.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = DD3914A20FB20F3BCFBD07A3 /* devRelease.xcconfig */; };
+		AA8823683D21755B5477D8BF /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FF2FB56B87640E0ABBFF3384 /* GoogleService-Info.plist */; };
 		B3510E9272C530EDCF39D117 /* preprodProfile.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 57FEE0DDCC16F1375880B799 /* preprodProfile.xcconfig */; };
 		B6512F09F55BD1307994C619 /* preprodDebug.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 59CBAC87D8EC2408E8D213B0 /* preprodDebug.xcconfig */; };
 		BCD423C2292274C9DFE25C2F /* integrationRelease.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 83978C74FAEDEE797EFB0229 /* integrationRelease.xcconfig */; };
@@ -103,6 +104,7 @@
 		E940087472397C0117B6DE95 /* devProfile.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = devProfile.xcconfig; path = Flutter/devProfile.xcconfig; sourceTree = "<group>"; };
 		EB620E43BABE785EB817FF30 /* integrationProfile.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = integrationProfile.xcconfig; path = Flutter/integrationProfile.xcconfig; sourceTree = "<group>"; };
 		F2941A93254A4EF0BEEF1866 /* testRelease.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = testRelease.xcconfig; path = Flutter/testRelease.xcconfig; sourceTree = "<group>"; };
+		FF2FB56B87640E0ABBFF3384 /* GoogleService-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "Runner/GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -166,6 +168,7 @@
 				698569F69B31FB6A17744466 /* integrationLaunchScreen.storyboard */,
 				06751D971C773C254679643D /* devLaunchScreen.storyboard */,
 				6EF6B360BA8A1C7209EB9A62 /* testLaunchScreen.storyboard */,
+				FF2FB56B87640E0ABBFF3384 /* GoogleService-Info.plist */,
 			);
 			sourceTree = "<group>";
 		};
@@ -312,6 +315,7 @@
 				1D51DE7D37317826E71FBBD5 /* integrationLaunchScreen.storyboard in Resources */,
 				17C83E11580928C5011DAB02 /* devLaunchScreen.storyboard in Resources */,
 				F12AEF9C8030DB9EDA830C03 /* testLaunchScreen.storyboard in Resources */,
+				AA8823683D21755B5477D8BF /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
