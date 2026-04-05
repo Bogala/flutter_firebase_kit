@@ -7,7 +7,7 @@
   },
   "enabledPlugins": {
     "superpowers@claude-plugins-official": true,
-    "oh-my-claudecode@omc": false,
+    "oh-my-claudecode@omc": true,
     "context7@claude-plugins-official": true
   }
 }
