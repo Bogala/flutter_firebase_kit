@@ -42,6 +42,7 @@
 		BE5EA95BDB3A5D168156BE2D /* devDebug.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 0CD8A358BF59C4930FC4441A /* devDebug.xcconfig */; };
 		D090A77B27F0541E6CEC8397 /* devProfile.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = B1211E7A6801AA541E10950C /* devProfile.xcconfig */; };
 		E7BE2D14C5581EFD2B14A21F /* recetteProfile.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 69CCFA0AB5F8FE01769885E8 /* recetteProfile.xcconfig */; };
+		F1206ED12720276AB5873339 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FDDDCCC809A71BA33B96C373 /* GoogleService-Info.plist */; };
 		FA407AE44D2A5F8666010668 /* preprodProfile.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = C3D5C87248F720665F6F5E95 /* preprodProfile.xcconfig */; };
 		FCB93B201C550F619B24EC74 /* devRelease.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = EC71552C44ABDBABB62DCFA7 /* devRelease.xcconfig */; };
 		FE7EFF4526BB52604CCBA098 /* prodRelease.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = AA55FD046322E0DCE07F01DD /* prodRelease.xcconfig */; };
@@ -113,6 +114,7 @@
 		BE373AECD8821209F9B58D6E /* recetteRelease.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = recetteRelease.xcconfig; path = Runner/Configs/recetteRelease.xcconfig; sourceTree = "<group>"; };
 		C3D5C87248F720665F6F5E95 /* preprodProfile.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = preprodProfile.xcconfig; path = Runner/Configs/preprodProfile.xcconfig; sourceTree = "<group>"; };
 		EC71552C44ABDBABB62DCFA7 /* devRelease.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = devRelease.xcconfig; path = Runner/Configs/devRelease.xcconfig; sourceTree = "<group>"; };
+		FDDDCCC809A71BA33B96C373 /* GoogleService-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "Runner/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		FFEDE441C41BAF5E67C68C4E /* preprodDebug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = preprodDebug.xcconfig; path = Runner/Configs/preprodDebug.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -179,6 +181,7 @@
 				21AA6EF95339E88977E3358F /* testDebug.xcconfig */,
 				3966216FD083E6C2061CBBD2 /* testProfile.xcconfig */,
 				80653814337EAA21BDF7FF8E /* testRelease.xcconfig */,
+				FDDDCCC809A71BA33B96C373 /* GoogleService-Info.plist */,
 			);
 			sourceTree = "<group>";
 		};
@@ -357,6 +360,7 @@
 				784B2D9E45B94F3AE3ABF55D /* testDebug.xcconfig in Resources */,
 				6E4898DD2140BA9018D6A68D /* testProfile.xcconfig in Resources */,
 				726814B08FFA11C34A6C44D2 /* testRelease.xcconfig in Resources */,
+				F1206ED12720276AB5873339 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

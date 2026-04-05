@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "575974943870",
+    "project_id": "ff-kit",
+    "storage_bucket": "ff-kit.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:575974943870:android:0a3cd7cebe67e0398e3c2f",
+        "android_client_info": {
+          "package_name": "pro.listo.flutter_starter_kit"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCRU89MM99PM1SHyooDUUxj-F2fHz6rggM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
