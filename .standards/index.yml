@@ -1,0 +1,45 @@
+# Standards Index
+
+process:
+  agent-memory-governance:
+    description: Memory governance rules for all agents — what to save, what not to save, update protocol
+
+architecture:
+  solid-principles:
+    description: SOLID principles applied to CityScope — SRP, OCP, LSP, ISP, DIP with Go hexagonal and Flutter clean arch examples
+
+flutter:
+  accessibility:
+    description: Semantics widget usage, keyboard navigation, focus management, accessible DS* components, BDD accessibility testing
+  adaptive-design:
+    description: MediaQuery.sizeOf(context), DSBreakpoints for responsive thresholds, LayoutBuilder for widget-level adaptation
+  bloc-pattern:
+    description: Bloc+Event+State structure with Interactor as ACL between presentation and domain
+  design-system-usage:
+    description: Use DS* components from package:design_system, never raw Material widgets
+  freezed-conventions:
+    description: Freezed rules — DTOs with JSON, domain without; value objects, Result<T> union, event/state conventions
+  injectable-di:
+    description: "@injectable/@singleton DI registration with @factoryMethod and @disposeMethod"
+  navigation:
+    description: AppRouter wrapper for OTel-traced go/push/replace/pop; deferred lazy loading with _traceModuleLoad; redirect tracing with _traceRedirect
+  performance:
+    description: Const constructors, build cost control, lazy lists, avoid saveLayer/Opacity, RepaintBoundary, image caching
+  platform-desktop:
+    description: Window management, keyboard shortcuts via Shortcuts+Actions, PlatformMenuBar for macOS
+  platform-mobile:
+    description: Platform adaptations, AppLifecycleListener, deep linking with go_router, push notifications, offline-first
+  platform-web:
+    description: PathUrlStrategy, Wasm build (Flutter 3.22+), deferred loading, CORS via Kong, tree shaking
+  retrofit-api-client:
+    description: "@RestApi pattern with Kong routing; @module for third-party deps (Dio, SharedPreferences); DTO-to-domain mapping"
+  widget-extraction:
+    description: Extract sub-widgets to separate classes; ban _buildWidget() private methods
+
+testing:
+  bdd-first-workflow:
+    description: Write .feature Gherkin scenario before any implementation; Red-Green-Refactor cycle
+  flutter-bdd-structure:
+    description: Feature files in test/gherkin/features/, step definitions in steps/, generated files never edited
+  test-isolation:
+    description: Each scenario cleans up its own data in ctx.After(); no shared state between scenarios

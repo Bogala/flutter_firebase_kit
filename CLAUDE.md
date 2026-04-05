@@ -1,134 +1,66 @@
-# CLAUDE.md
+# flutter_firebase_kit
 
-This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
+Flutter/Firebase application using Clean Architecture, flutter_bloc, freezed,
+injectable/get_it, go_router, and Firebase (Auth, Firestore, Functions, Vertex AI).
 
-## Commands
+## Spec-Driven Development
+This project uses GitHub Spec Kit. ALL feature work follows the SDD workflow.
+- Constitution: @.specify/memory/constitution.md — READ BEFORE ANY WORK
+- Active specs: @specs/ — check numbered directories for current features
+- Before implementing: read spec.md → plan.md → tasks.md in order
+- Each task in tasks.md = one atomic commit with task ID reference
 
-```bash
-# Install dependencies
-flutter pub get
-
-# Run the app (dev flavor)
-flutter run --flavor dev -t lib/main_dev.dart
-
-# Analyze code (must pass with zero warnings)
-flutter analyze
-
-# Run all tests
-flutter test
-
-# Regenerate code (after modifying DTOs, Entities, or injection annotations)
-dart run build_runner build --delete-conflicting-outputs
-
-# Watch mode for code generation (during development)
-dart run build_runner watch --delete-conflicting-outputs
-
-# Regenerate flavors (save main.dart and app.dart first!)
-dart run flutter_flavorizr
-```
-
-## Architecture
-
-This is a Flutter starter kit using **Clean Architecture** with strict layer separation, **BLoC** for state management, and **BDD/Gherkin** tests.
-
-### Layer Structure
-
+## Architecture (Feature-First Clean Architecture)
 ```
 lib/
-├── core/      # Technical infrastructure (DI, network, configuration)
-├── data/      # Data layer (DTOs, repositories, API clients)
-├── domain/    # Business layer (entities, use cases)
-├── ui/        # Presentation layer (pages, BLoCs, widgets)
-└── main_*.dart  # Flavor-specific entry points
+├── app/                          # MaterialApp, bootstrap, DI init
+├── core/                         # Shared: errors, usecases base, utils, config
+├── features/
+│   └── {feature}/
+│       ├── domain/               # Entities, repository interfaces, use cases
+│       │   ├── entities/         # @freezed pure Dart objects
+│       │   ├── repositories/     # Abstract interfaces only
+│       │   └── usecases/         # One class per business operation
+│       ├── data/                 # Implementations, DTOs, datasources
+│       │   ├── models/           # @freezed DTOs with fromJson/toJson
+│       │   ├── repositories/     # Concrete repository implementations
+│       │   └── datasources/      # Firebase/API data source classes
+│       └── presentation/         # Bloc, pages, widgets
+│           ├── bloc/             # Sealed events + sealed states + Bloc
+│           ├── pages/            # Full screen widgets
+│           └── widgets/          # Feature-scoped extracted widgets
+├── routing/                      # go_router config, route constants
+└── shared_ui/                    # Design system, theme, global cubits
 ```
 
-**Import rules (strict):**
-- `ui/` → imports only `domain_module.dart`
-- `domain/` → imports only `data_module.dart`
-- `data/` → imports `core_module.dart`
-- Never import individual files from another layer; always import via `*_module.dart`
+## Commands
+- Build: `flutter pub run build_runner build --delete-conflicting-outputs`
+- Watch: `flutter pub run build_runner watch --delete-conflicting-outputs`
+- Test: `flutter test`
+- Lint: `flutter analyze && dart format --set-exit-if-changed .`
+- Firebase emulators: `firebase emulators:start`
+- Run profile: `flutter run --profile`
 
-### `*_module.dart` Files
+## Code Rules
+- ALWAYS use sealed classes for Bloc events and states (Dart 3 exhaustiveness)
+- ALWAYS check isClosed after async gaps in Bloc handlers
+- ALWAYS emit new state instances via copyWith(), never mutate
+- ALWAYS use @freezed for entities and DTOs
+- ALWAYS use native Dart 3 switch expressions, NEVER freezed when/map
+- ALWAYS wrap Firebase calls behind repository interfaces
+- NEVER import from another feature's data/ or presentation/ layer
+- NEVER use Provider for Blocs — use BlocProvider exclusively
+- Use const constructors wherever possible
+- Domain layer must have ZERO Flutter imports
 
-Every folder has a `*_module.dart` that exports the public API of that layer. When adding new files, export them through the appropriate module file.
+## BDD-First Workflow
+1. Write Gherkin scenarios in specs/{feature}/spec.md acceptance criteria
+2. Create test file with Given-When-Then structure BEFORE implementation
+3. Implement minimum code to pass tests (Red-Green-Refactor)
+4. Domain tests mock repositories, Bloc tests mock use cases
 
-### Navigation (go_router)
-
-Routes are registered by each feature's `*_module.dart` via its `configure()` method, which calls `_appRouter.addRoute(...)`. No central route file — features self-register on initialization.
-
-### BLoC Screen Structure
-
-```
-feature_name/
-├── view/
-│   ├── components/          # Stateless reusable widgets
-│   ├── feature_page.dart    # Initializes the BLoC
-│   └── feature_view.dart    # Displays the screen, manages state
-├── feature_bloc.dart
-├── feature_event.dart
-├── feature_state.dart
-├── feature_interactor.dart  # Anti-Corruption Layer between UI and Domain
-└── feature_module.dart      # Injects routes into the router
-```
-
-### Dependency Injection
-
-Uses `get_it` + `injectable`. Annotations:
-- `@singleton` for Use Cases and Interactors
-- `@injectable` with `@factoryMethod` for Repositories
-
-After adding/modifying annotated classes, run `dart run build_runner build --delete-conflicting-outputs`. Never manually edit `injection.config.dart`.
-
-### Data Conversion (Anti-Corruption Layer)
-
-DTOs are only used in the `data/` layer. Conversion to domain entities is done via `Entity.fromDto(dto)` factory constructors. BLoC states must use domain Entities, never DTOs.
-
-### Generated Files (Never Edit Manually)
-
-- `*.g.dart` — Retrofit, JSON serialization
-- `*.freezed.dart` — Freezed value objects
-- `lib/injection.config.dart` — Injectable DI config
-
-## Flavors
-
-| Flavor        | Entry Point                 | Purpose              |
-|---------------|-----------------------------|----------------------|
-| `prod`        | `lib/main_prod.dart`        | Production           |
-| `preprod`     | `lib/main_preprod.dart`     | Pre-production       |
-| `recette`     | `lib/main_recette.dart`     | UAT/Recette          |
-| `integration` | `lib/main_integration.dart` | Integration tests    |
-| `dev`         | `lib/main_dev.dart`         | Local development    |
-| `test`        | `lib/main_test.dart`        | Automated tests      |
-
-Never delete `prod`, `dev`, or `test` flavors.
-
-## Testing
-
-BDD tests use Gherkin: write `.feature` files in `test/gherkin/features/` and step implementations (`.dart`) in `test/gherkin/steps/`. Three steps come pre-installed (app launch, route start, screen resize).
-
-Async domain-to-UI data flow must use `Stream`, not `Future`.
-
-API mocks go in `/mocks/api/` in the format:
-```json
-{ "GET": { "statusCode": 200, "data": {} } }
-```
-
-Test coverage targets: Use Cases 100%, BLoCs 90%, Repositories 80%.
-
-## Commit Format
-
-```
-<JIRA-ticket> - <type>(<scope>) : <short summary>
-```
-
-Types: `build`, `ci`, `docs`, `feat`, `fix`, `perf`, `refactor`, `test`
-Scopes: `core`, `data`, `domain`, `ui`, `design`
-
-Example: `LIS-123 - feat(ui) : ajouter écran de connexion`
-
-## Active Technologies
-- Dart 3.10+ / Flutter >=3.10.2 + `firebase_core`, `firebase_auth`, (001-firebase-auth)
-- Firebase Auth (remote) — no local storage needed (001-firebase-auth)
-
-## Recent Changes
-- 001-firebase-auth: Added Dart 3.10+ / Flutter >=3.10.2 + `firebase_core`, `firebase_auth`,
+## Standards References
+Detailed rules load automatically via .claude/rules/ when working in relevant paths.
+For full standards: @.specify/memory/constitution.md
+Coding standards index: @.standards/index.yml — consult before implementing in any covered area
+Constitution amendments require SemVer bump and sync with this file (see Governance in constitution)

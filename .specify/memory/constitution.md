@@ -1,17 +1,17 @@
 <!--
 Sync Impact Report
 ===================
-Version change: 0.0.0 → 1.0.0 (MAJOR — initial ratification)
+Version change: 1.0.0 → 1.1.0 (MINOR — new section added)
 
-Modified principles: N/A (all new)
+Modified principles: None
 
 Added sections:
-  - Core Principles (5 principles)
-  - Code Conventions and Commit Standards
-  - Dependency Injection and API Architecture
-  - Governance
+  - Coding Standards Reference (`.standards/` directory)
 
-Removed sections: None (template placeholders replaced)
+Removed sections: None
+
+Modified sections:
+  - Governance rule 4: added `.standards/` consistency requirement
 
 Templates checked:
   - .specify/templates/plan-template.md ✅ no update needed
@@ -157,6 +157,32 @@ Reusable widgets in `ui/` MUST be stateless, free of business
 logic, and project-specific only. Widgets intended for reuse
 across projects MUST be moved to the design system.
 
+## Coding Standards Reference
+
+Detailed coding standards are maintained in the `.standards/`
+directory. The file `.standards/index.yml` is the authoritative
+index describing each standard's purpose and scope.
+
+Standards are organized into four categories:
+
+- **process** — agent memory governance and workflow rules
+- **architecture** — SOLID principles applied to the project
+- **flutter** — widget extraction, BLoC pattern, navigation,
+  DI, Freezed conventions, Retrofit, performance, accessibility,
+  adaptive design, design system usage, and platform-specific
+  standards (mobile, web, desktop)
+- **testing** — BDD-first workflow, Flutter BDD structure,
+  test isolation
+
+All contributors and agents MUST consult the relevant standard
+in `.standards/` before implementing in that area. When a
+constitution principle and a standard both apply, the
+constitution takes precedence.
+
+New standards MUST be registered in `.standards/index.yml`
+at creation time. Orphan standard files (present on disk but
+absent from `index.yml`) MUST be flagged during code review.
+
 ## Dependency Injection and API Architecture
 
 **Dependency injection:**
@@ -197,9 +223,11 @@ across projects MUST be moved to the design system.
    compliance with the five core principles. Reviewers MUST
    reject PRs that violate any principle without an approved
    waiver.
-4. `CLAUDE.md` MUST remain consistent with this constitution.
-   Any constitutional amendment MUST be reflected in
-   `CLAUDE.md` within the same commit.
+4. `CLAUDE.md` and `.standards/` MUST remain consistent with
+   this constitution. Any constitutional amendment MUST be
+   reflected in `CLAUDE.md` within the same commit. Standards
+   in `.standards/` MUST NOT contradict constitutional
+   principles.
 5. Waivers for exceptional circumstances MUST be documented
    inline (in the PR description) with justification and a
    remediation timeline.
@@ -207,4 +235,4 @@ across projects MUST be moved to the design system.
    (all passing) are mandatory CI gates. No merge MUST
    proceed if either fails.
 
-**Version**: 1.0.0 | **Ratified**: 2026-04-05 | **Last Amended**: 2026-04-05
+**Version**: 1.1.0 | **Ratified**: 2026-04-05 | **Last Amended**: 2026-04-05
